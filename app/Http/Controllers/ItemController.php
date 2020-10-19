@@ -4,13 +4,28 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Item;
+use App\Models\Item;
+
+use App\Models\Image;
 
 class ItemController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('JpJsonResponse');
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    
     public function index()
     {
-        return view('item/index');
+        $items = Item::all();
+        $images = Image::all();
+        return view('item/index', ['items' => $items, 'images' => $images]);
     }
 
     public function create()
@@ -18,8 +33,36 @@ class ItemController extends Controller
         return view('item.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        return view('item.create');
+        // header('Content-Type: text/html; charset=UTF-8');
+        $value = new Item;
+
+        $i = 0;
+
+        $value->tname = $request->input('tname');
+
+        $value->price = $request->input('price');
+
+        $value->description = $request->input('description');
+
+        // $values = mb_convert_encoding($value, "UTF-8");
+
+        $value->save();
+
+        foreach ($request->nums as $val) {
+            if ($request->img !== null) {
+                $img = new Image;
+
+                $img->image = $request->img[$i]->store('images', 'public');
+
+                $img->item_id = $value->id;
+
+                $img->save();
+            }
+            $i++;
+        }
+
+        return redirect('/');
     }
 }
