@@ -65,4 +65,12 @@ class ItemController extends Controller
 
         return redirect('/');
     }
+
+    public function show($id)
+    {
+        $item = Item::findOrFail($id);
+        $image = Image::where('item_id', $id)->get();
+        // echo var_dump($image);
+        return view('item.show', ['item' => $item, 'image' => $image]);
+    }
 }

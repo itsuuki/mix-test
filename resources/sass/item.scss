@@ -2,7 +2,10 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  background-image: url("https://dddfont.com/m/ma245_9/s500_ma245_9_1.png");
 }
+
+// https://comic-mode.com/img/html_templates/t_2704.png?5ed3de75802c6
 .top {
   display: flex;
   justify-content: center;
@@ -17,7 +20,7 @@
 
 .file-label {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .file-two {
@@ -38,22 +41,60 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  text-decoration: none;
+}
+
+.lable-tname {
+  font-size: 25px;
+}
+
+.lable-price {
+  font-size: 25px;
 }
 
 .tname {
   width: calc(100vw - 80vw);
   margin: auto;
+  margin-bottom: 120px;
+  font-size: 35px;
+  margin-top: 30px;
+  background-color: white;
+  border: solid 1px;
 }
 
 .price {
   width: calc(100vw - 80vw);
   margin: auto;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
+  font-size: 35px;
+  background-color: white;
+  border: solid 1px;
 }
 
 .buy-button {
-  width: calc(100vw - 90vw);
+  height: 60px;
+  width: calc(100vw - 70vw);
   margin: auto;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 4px;
+  color: #ffffff;
+  background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 3px #c58668;
+  font-size: 30px;
+  line-height: 30px;
+}
+.buy-button:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+}
+.buy-button:hover {
+  color: white;
+  text-decoration: none;
 }
 
 .description {
@@ -65,6 +106,11 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  width: calc(100vw - 10vw);
+  font-size: 25px;
+  background-color: white;
+  border: solid 1px;
+  margin: auto;
 }
 
 .description {

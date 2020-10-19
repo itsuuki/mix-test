@@ -30,7 +30,7 @@
     </div>
     <div class="rights">
       <div class="right">
-        <label for="tname">
+        <label for="tname" class="lable-tname">
             商品名
         </label>
         <input
@@ -40,7 +40,7 @@
             value="{{ old('tname') }}"
             type="text"
         >
-        <label for="price">
+        <label for="price" class="lable-price">
             金額
         </label>
         <input
@@ -50,7 +50,7 @@
             value="{{ old('price') }}"
             type="text"
         >
-        <button class="buy-button">購入</button>
+        <a href="#" class="buy-button">購入</a>
       </div>
     </div>
   </div>
