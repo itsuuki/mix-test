@@ -4,6 +4,7 @@
 <script src="{{ asset('/js/item.js') }}" defer></script>
 @section('content')
 <form method="POST" action="{{route('Item.store')}}" enctype="multipart/form-data">
+{{ csrf_field() }}
 <div class="tops">
   <div class="top">
     <div class="left">
@@ -16,12 +17,15 @@
         </label>
       </div>
       <div class="file-two">
-        <input type="file" name="img" id="myfile1">
-        <input type="file" name="img" id="myfile2">
+        @for ($i = 0; $i < 2; $i++)
+          <input type="file" name="img[{{$i}}]" id="myfile{{$i}}">
+          <!-- <input type="file" name="img[]" id="myfile2"> -->
+          <input type="hidden" name="nums[{{$i}}]">
+        @endfor
       </div>
       <div class="preview">
+        <img id="img0" style="width:290px;height:290px;" />
         <img id="img1" style="width:290px;height:290px;" />
-        <img id="img2" style="width:290px;height:290px;" />
       </div>
     </div>
     <div class="rights">
@@ -62,6 +66,15 @@
     >{{ old('description[]') }}</textarea>
   </div>
 </div>
+<div class="mt-5">
+        <a class="btn btn-secondary" href="/">
+            キャンセル
+        </a>
+
+        <button type="submit" class="btn btn-primary">
+            登録する
+        </button>
+    </div>
 </form>
 <div id="graydisplay"></div>
 @endsection

@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  // margin: auto;
 }
 .top {
   display: flex;
@@ -10,13 +9,10 @@
   text-align: center;
   margin-bottom: 50px;
   padding-bottom: 100px;
-  border: solid 1px;
-  // background-color: white;
-  // color: white;
+  border-bottom: solid 1px
 }
 .left {
   width: calc(100vw - 40vw);
-  // text-align: center;
 }
 
 .file-label {
@@ -36,7 +32,6 @@
 
 .rights {
   width: calc(100vw - 60vw);
-  // border: solid 1px;
 }
 
 .right {
@@ -76,6 +71,16 @@
   margin: auto;
 }
 
+.item-all {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item-one {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
 #graydisplay {
   display: none;
   position: fixed;

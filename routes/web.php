@@ -22,6 +22,7 @@ Auth::routes();
 
 Route::get('/', [ItemController::class, 'index'])->name('item/index');
 Route::get('/Item/create', [ItemController::class, 'create']);
+// Route::post('/Item', [ItemController::class, 'store']);
 
 // Route::resource('Item', [ItemController::class]);
 Route::resource('Item', ItemController::class);
