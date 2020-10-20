@@ -29,6 +29,7 @@
           {{ $item->price }}円
         </div>
         <a href="#" class="buy-button">購入</a>
+        <a href="#" class="fav-button">お気に入りに追加</a>
       </div>
     </div>
   </div>
