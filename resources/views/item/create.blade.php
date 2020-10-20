@@ -67,14 +67,14 @@
   </div>
 </div>
 <div class="mt-5">
-        <a class="btn btn-secondary" href="/">
-            キャンセル
-        </a>
+  <a class="btn btn-secondary" href="/">
+      キャンセル
+  </a>
 
-        <button type="submit" class="btn btn-primary">
-            登録する
-        </button>
-    </div>
+  <button type="submit" class="btn btn-primary">
+      登録する
+  </button>
+</div>
 </form>
 <div id="graydisplay"></div>
 @endsection

@@ -15,3 +15,6 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
 mix.js('resources/js/item.js', 'public/js')
     .sass('resources/sass/item.scss', 'public/css');
+mix.js('resources/js/user.js', 'public/js')
+    .sass('resources/sass/user.scss', 'public/css');
+mix.sass('resources/sass/address.scss', 'public/css');
