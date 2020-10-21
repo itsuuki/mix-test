@@ -8,6 +8,8 @@ use App\Models\Item;
 
 use App\Models\Image;
 
+use App\Models\Favorite;
+
 class ItemController extends Controller
 {
 
@@ -70,7 +72,8 @@ class ItemController extends Controller
     {
         $item = Item::findOrFail($id);
         $image = Image::where('item_id', $id)->get();
-        // echo var_dump($image);
-        return view('item.show', ['item' => $item, 'image' => $image]);
+        $favorite = Favorite::where('item_id', $id)->first();
+        echo var_dump($favorite);
+        return view('item.show', ['item' => $item, 'image' => $image, 'favorite' => $favorite]);
     }
 }

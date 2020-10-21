@@ -12,8 +12,8 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::findOrFail($id);
-        $address = Address::where('item_id', $id)->get();
-        // echo var_dump($image);
-        return view('user.show', ['user' => $user]);
+        $address = Address::where('user_id', $id)->first();
+        // echo var_dump($address);
+        return view('user.show', ['user' => $user, 'address' => $address]);
     }
 }
