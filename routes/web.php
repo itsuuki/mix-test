@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AddressController;
+use App\Http\Controllers\FavoriteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,8 @@ Route::get('/Item/create', [ItemController::class, 'create']);
 Route::get('/Item/{$id}', [ItemController::class, 'show']);
 Route::get('/User/{$id}', [UserController::class, 'show']);
 Route::get('/User/address', [AddressController::class, 'create']);
+Route::post('Item/{id}/favorites', [FavoriteController::class, 'store'])->name('favorites');
+Route::post('Item/{item}/unfavorites', [FavoriteController::class, 'destroy'])->name('unfavorites');
 
 // Route::post('/Item', [ItemController::class, 'store']);
 
@@ -34,3 +37,4 @@ Route::get('/User/address', [AddressController::class, 'create']);
 Route::resource('Item', ItemController::class);
 Route::resource('User', UserController::class);
 Route::resource('Address', AddressController::class);
+Route::resource('Item.favorite', FavoriteController::class);

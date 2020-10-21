@@ -17,7 +17,16 @@
             住所確認
           </label>
           <div class="ac-small">
-            <p>ここにテキスト流す</p>
+            <p>
+              @if ($address != null)
+                {{ $address->number }}
+                {{ $address->city }}
+              @else
+              <a class="user-add-add" href="address">
+                住所を設定する
+              </a>
+              @endif
+            </p>
           </div>
         </div>
         <div class="ac-box">
@@ -38,9 +47,6 @@
             <p>ここにテキスト流す</p>
           </div>
         </div>
-        <a class="user-add-add" href="address">
-          住所を設定する
-        </a>
       </div>
     </div>
   </div>

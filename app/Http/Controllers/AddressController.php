@@ -29,6 +29,8 @@ class AddressController extends Controller
 
         $addre->city = $request->input('city');
 
+        $addre->user_id = $request->user()->id;
+
         $addre->save();
 
         return redirect('/');
